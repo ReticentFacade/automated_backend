@@ -1,0 +1,27 @@
+# TODO
+
+- Create a git repo
+  - Auth 
+    - with JWT
+    - without JWT
+  - DB
+    - Postgres
+    - MongoDB
+    - MySQL
+    - Redis (additional)
+
+- Automation script (bash/golang)
+  - Ask for auth type (simple/jwt)
+  - Ask for DB type (postgres/mongo/mysql)
+
+- clone the specific branch
+- remove `.git`
+- initiate a new `.git`
+
+- (optional) ask if the repo already exists
+  - if yes, then connect to it 
+  - switch to `main` branch
+  - prompt for git origin URL 
+
+- (optional) ask for initial commit
+  - prompt if user wants to upload current files as an initial commit 
