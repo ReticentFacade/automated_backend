@@ -2,8 +2,8 @@
 
 - [ ] Create a git repo
   - [ ] Auth 
-    - [ ] without JWT
-    - [ ] with JWT
+  - [ ] without JWT
+  - [ ] with JWT
   - [ ] DB
     - [ ] Postgres
     - [ ] MongoDB
