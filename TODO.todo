@@ -4,11 +4,12 @@
   - [ ] Auth 
   - [ ] without JWT
   - [ ] with JWT
-  - [ ] DB
-    - [ ] Postgres
-    - [ ] MongoDB
-    - [ ] MySQL
-    - [ ] Redis (additional)
+
+- [ ] DB
+  - [ ] Postgres
+  - [ ] MongoDB
+  - [ ] MySQL˚
+  - [ ] Redis (additional)
 
 - [ ] Automation script (bash/golang)
   - [ ] Ask for auth type (simple/jwt)
