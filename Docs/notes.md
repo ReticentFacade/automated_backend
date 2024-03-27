@@ -1,4 +1,4 @@
-# Some notes
+# Notes
 
 * Using dotenv with bun:
 
@@ -7,7 +7,7 @@
 const abc = bun.env.ABC_VALUE;
 ```
 
-* Some imported middleware:
+* About imported middleware:
 
 ```js
 app.use(express());

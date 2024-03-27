@@ -1,28 +1,28 @@
 # TODO
 
-- [ ] Create a git repo
-  - [ ] Auth 
-  - [ ] without JWT
-  - [ ] with JWT
+ ✔ Create a git repo @done (27/03/2024, 08:39:38)
+   ✔ Auth @done (27/03/2024, 08:39:39)
+   ✔ without JWT @done (27/03/2024, 08:39:39)
+   ✔ with JWT @done (27/03/2024, 08:39:39)
 
-- [ ] DB
-  - [ ] Postgres
-  - [ ] MongoDB
-  - [ ] MySQL˚
-  - [ ] Redis (additional)
+ ☐ DB
+   ☐ Redis (Token storage/caching)
+   ☐ Postgres
+   ☐ MongoDB
+   ☐ MySQL
 
-- [ ] Automation script (bash/golang)
-  - [ ] Ask for auth type (simple/jwt)
-  - [ ] Ask for DB type (postgres/mongo/mysql)
+ ☐ Automation script (bash/golang)
+   ☐ Ask for auth type (simple/jwt)
+   ☐ Ask for DB type (postgres/mongo/mysql)
 
-- [ ] clone the specific branch
-- [ ] remove `.git`
-- [ ] initiate a new `.git`
+ ☐ clone the specific branch
+ ☐ remove `.git`
+ ☐ initiate a new `.git`
 
-- [ ] (optional) ask if the repo already exists
-  - [ ] if yes, then connect to it 
-  - [ ] switch to `main` branch
-  - [ ] prompt for git origin URL 
+ ☐ (optional) ask if the repo already exists
+   ☐ if yes, then connect to it
+   ☐ switch to `main` branch
+   ☐ prompt for git origin URL
 
-- [ ] (optional) ask for initial commit
-  - [ ] prompt if user wants to upload current files as an initial commit 
+ ☐ (optional) ask for initial commit
+   ☐ prompt if user wants to upload current files as an initial commit
