@@ -1,8 +1,9 @@
-import { register, login } from "./auth.controller.js";
+import { register, login, logout } from "./auth.controller.js";
 
 const controller = {
   register,
   login,
+  logout,
 };
 
 export default controller;

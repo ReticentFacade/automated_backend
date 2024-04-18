@@ -20,10 +20,10 @@ const jwtGenerateToken = async (userId, res) => {
     );
 
     // Set token as cookie:
-    await res.cookie("jwt", token, {
-      maxAge: 1 * 24 * 60 * 60 * 1000,
-      httpOnly: true,
-    });
+    // await res.cookie("jwt", token, {
+    //   maxAge: 1 * 24 * 60 * 60 * 1000,
+    //   httpOnly: true,
+    // });
 
     return token;
   } catch (err) {
