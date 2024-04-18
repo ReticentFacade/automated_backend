@@ -69,7 +69,8 @@ const login = async (req, res) => {
 const logout = async (req, res) => {
   const token = extractToken(req);
   try {
-    if (token == null) res.status(500).json({ message: "Internal Server Error" });
+    if (token == null)
+      res.status(500).json({ message: "Internal Server Error" });
 
     redisToken.deleteToken(token);
     console.log("Logout successful");
