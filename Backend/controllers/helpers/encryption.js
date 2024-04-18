@@ -1,9 +1,5 @@
 import crypto from "crypto";
-import {
-  SECRET_KEY,
-  SECRET_IV,
-  ENCRYPTION_METHOD,
-} from "../../config/config.js";
+import { SECRET_KEY, SECRET_IV, ENCRYPTION_METHOD } from "./config.js";
 
 if ((!SECRET_KEY, !SECRET_IV, !ENCRYPTION_METHOD)) {
   throw new Error("Encryption config not found");
