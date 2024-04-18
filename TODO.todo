@@ -5,11 +5,14 @@
    ✔ without JWT @done (27/03/2024, 08:39:39)
    ✔ with JWT @done (27/03/2024, 08:39:39)
 
- ☐ DB
-   ☐ Redis (Token storage/caching)
-   ☐ Postgres
-   ☐ MongoDB
-   ☐ MySQL
+   ☐ DB
+    ✔ Redis (Token storage/caching) @done (18/04/2024, 19:49:50)
+    ☐ MongoDB
+    ☐ Postgres
+    ☐ MySQL
+   
+☐ Migrate from JS to TS - refer to the points at the end
+☐ Migrate logic from `controller` to `services`
 
  ☐ Automation script (bash/golang)
    ☐ Ask for auth type (simple/jwt)
@@ -26,3 +29,12 @@
 
  ☐ (optional) ask for initial commit
    ☐ prompt if user wants to upload current files as an initial commit
+
+------------
+
+Create a bash script to convert JS project to TS
+
+1. check if all packages required to migrate to TS are available
+2. if they do then remove unwanted packages
+3. do a recursive search in directory and change all .js files to .TS
+4. list down all changed files including path to file so user can see what files need changes
