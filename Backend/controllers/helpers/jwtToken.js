@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
-dotenv.config();
+import { SECRET_KEY, JWT_SECRET_KEY } from "../../config/config.js";
 
 // This file deals with:
 // 1. Generating a token
@@ -13,7 +12,7 @@ const jwtGenerateToken = async (userId, res) => {
       {
         id: userId,
       },
-      process.env.JWT_SECRET_KEY,
+      SECRET_KEY,
       {
         expiresIn: "1d",
       }
@@ -34,7 +33,7 @@ const jwtGenerateToken = async (userId, res) => {
 
 const jwtVerifyToken = async (token) => {
   try {
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    const decodedToken = jwt.verify(token, JWT_SECRET_KEY);
 
     console.log("Decoded token:", decodedToken);
     return decodedToken.id;
