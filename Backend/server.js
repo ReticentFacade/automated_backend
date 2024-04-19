@@ -2,11 +2,9 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { router } from "./routes/routes.js";
-import dotenv from "dotenv";
-dotenv.config();
+import { PORT } from "./config/config.js";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 app.use(express());
 app.use(express.json());
@@ -22,6 +20,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(router);
 
-app.listen(PORT, () => {
+app.listen(PORT || 8000, () => {
   console.log(`App running on ${PORT}`);
 });

@@ -1,8 +1,8 @@
 import redis from "redis";
-import { REDIS_PW, REDIS_HOST, REDIS_PORT } from "../config/config.js";
+import { REDIS_PASS, REDIS_HOST, REDIS_PORT } from "../config/config.js";
 
 const client = redis.createClient({
-  password: REDIS_PW,
+  password: REDIS_PASS,
   socket: {
     host: REDIS_HOST,
     port: REDIS_PORT,
