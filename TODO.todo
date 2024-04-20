@@ -38,3 +38,7 @@ Create a bash script to convert JS project to TS
 2. if they do then remove unwanted packages
 3. do a recursive search in directory and change all .js files to .TS
 4. list down all changed files including path to file so user can see what files need changes
+
+------------
+
+☐ Instagram API and OAuth 2.0
