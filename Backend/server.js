@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { router } from "./routes/routes.js";
 import { PORT } from "./config/config.js";
+import { connectToMongoDB } from "./db/mongodb.db.js";
 
 const app = express();
 
@@ -23,3 +24,5 @@ app.use(router);
 app.listen(PORT || 8000, () => {
   console.log(`App running on ${PORT}`);
 });
+
+connectToMongoDB();

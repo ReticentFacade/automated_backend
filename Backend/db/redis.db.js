@@ -1,6 +1,9 @@
 import redis from "redis";
 import { REDIS_PASS, REDIS_HOST, REDIS_PORT } from "../config/config.js";
 
+if (!REDIS_PASS || !REDIS_HOST || !REDIS_PORT)
+  throw new Error("Could not load env variables");
+
 const client = redis.createClient({
   password: REDIS_PASS,
   socket: {
@@ -21,7 +24,7 @@ client.on("end", () => console.log("Redis client ended"));
 
 // Setting username and jwts:
 const setToken = (username, token) => {
-  client.set(username, token, (err, reply) => {
+  client.set(username, token, (err) => {
     if (err) {
       console.error("Error setting token:", err);
     }

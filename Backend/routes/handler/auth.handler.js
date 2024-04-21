@@ -7,7 +7,7 @@ authRouter.post("/register", controller.register);
 authRouter.post("/login", controller.login);
 authRouter.delete("/logout", controller.logout);
 
-authRouter.get("/getUsers");
+authRouter.get("/getUsers", controller.getUsers);
 // authRouter.put();
 // authRouter.delete();
 

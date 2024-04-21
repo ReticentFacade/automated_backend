@@ -4,6 +4,8 @@ import { jwtGenerateToken, jwtVerifyToken } from "./helpers/jwtToken.js";
 import { redisToken } from "../db/redis.db.js";
 import { missingFields } from "./helpers/missingFields.js";
 import { extractToken } from "./helpers/extractToken.js";
+import testGetUsers from "../tests/getUsers.test.js";
+import { User } from "../models/index.models.js";
 
 const register = async (req, res) => {
   const { username, email, password } = req.body;
@@ -25,14 +27,16 @@ const register = async (req, res) => {
 
   try {
     // Create & store the new user in DB
-    // const createdUser = ;
+    const createdUser = await User.create(data);
+    console.log("createdUser -->", createdUser);
 
-    // When stored, use jwtGenerateToken
-    const token = await jwtGenerateToken(username);
-    console.log("Token created!", token);
-    redisToken.setToken(username, token);
-
-    res.status(201).json({ message: "Token set successfully" });
+    if (createdUser) {
+      // When stored, use jwtGenerateToken
+      const token = await jwtGenerateToken(username);
+      console.log("Token created!", token);
+      redisToken.setToken(username, token);
+      res.status(201).json({ message: "Token set successfully" });
+    } else res.status(500).json({ message: "Internal Server Error" });
   } catch (error) {
     console.error("Error setting token:", error);
     res.status(500).json({ message: "Internal Server Error" });
@@ -81,4 +85,8 @@ const logout = async (req, res) => {
   }
 };
 
-export { register, login, logout };
+const getUsers = async (req, res) => {
+  const users = testGetUsers(req, res);
+};
+
+export { register, login, logout, getUsers };
