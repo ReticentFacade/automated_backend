@@ -10,7 +10,8 @@ import userSchema from "../schemas/userSchema.js";
 if (!MYSQL_DB || !MYSQL_USER || !MYSQL_HOST || !MYSQL_PASS)
   throw new Error("Couldn't load env variables");
 
-const client = mysql.createConnection({
+const pool = mysql.createPool({
+  connectionLimit: 10,
   host: MYSQL_HOST,
   user: MYSQL_USER,
   password: MYSQL_PASS,
@@ -18,60 +19,77 @@ const client = mysql.createConnection({
 });
 
 const mysqlConnection = () => {
-  client.connect((err) => {
+  pool.getConnection((err, connection) => {
     if (err) {
       console.error("Error connecting to MySQL DB:", err);
       return;
     }
-    console.log("Connected to MySQL DB successfully");
+    console.log("Connected to MySQL DB successfully...");
 
     const createDbQuery = `CREATE DATABASE IF NOT EXISTS ${MYSQL_DB}`;
-    client.query(createDbQuery, (err) => {
+    connection.query(createDbQuery, (err) => {
       if (err) {
         console.error("Error creating database:", err);
+        connection.release();
         return;
       }
       console.log(`${MYSQL_DB} created successfully...`);
-      useDatabase();
+      useDatabase(connection);
     });
   });
 };
 
-const useDatabase = () => {
+const useDatabase = (connection) => {
   const useDbQuery = `USE ${MYSQL_DB}`;
-  client.query(useDbQuery, (err) => {
+  connection.query(useDbQuery, (err) => {
     if (err) {
       console.error("Error selecting database:", err);
+      connection.release();
       return;
     }
     console.log(`Now using ${MYSQL_DB}...`);
-    createUserTable();
+    createUserTable(connection);
   });
 };
 
-const createUserTable = () => {
+const createUserTable = (connection) => {
   const query = `CREATE TABLE IF NOT EXISTS users (${Object.entries(userSchema)
     .map(([key, value]) => `${key} ${value}`)
     .join(", ")})`;
 
-  client.query(query, (err, results, fields) => {
+  connection.query(query, (err, results, fields) => {
     if (err) {
       console.error("Error creating users table:", err);
+      connection.release();
       return;
     }
     console.log(`Users table created successfully`);
+    connection.release();
   });
 };
 
 const insertUser = (userData) => {
-  const { username, email, password } = userData;
-  const query = `INSERT INTO users (username, email, password) VALUES (?, ?, ?)`;
-  client.query(query, [username, email, password], (err, results, fields) => {
+  pool.getConnection((err, connection) => {
     if (err) {
-      console.error("Error inserting user:", err);
+      console.error("Error getting connection from pool:", err);
       return;
     }
-    console.log("User inserted successfully");
+
+    const { username, email, password } = userData;
+    const query = `INSERT INTO users (username, email, password) VALUES (?, ?, ?)`;
+    connection.query(
+      query,
+      [username, email, password],
+      (err, results, fields) => {
+        if (err) {
+          console.error("Error inserting user:", err);
+          connection.release();
+          return;
+        }
+        console.log("User inserted successfully");
+        connection.release();
+      }
+    );
   });
 };
 
