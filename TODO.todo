@@ -8,7 +8,7 @@
    ☐ DB
     ✔ Redis (Token storage/caching) @done (18/04/2024, 19:49:50)
     ✔ MongoDB @done (21/04/2024, 22:13:10)
-    ☐ Postgres
+    ✔ Postgres @done (22/04/2024, 06:16:04)
     ☐ MySQL
    
 ☐ Migrate from JS to TS - refer to the points at the end
