@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { router } from "./routes/routes.js";
 import { PORT } from "./config/config.js";
+import { mysqlConnection } from "./db/mysql.db.js";
 
 const app = express();
 
@@ -19,6 +20,8 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(router);
+
+mysqlConnection();
 
 app.listen(PORT || 8000, () => {
   console.log(`App running on ${PORT}`);
