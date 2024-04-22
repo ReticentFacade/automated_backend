@@ -5,12 +5,12 @@
    ✔ without JWT @done (27/03/2024, 08:39:39)
    ✔ with JWT @done (27/03/2024, 08:39:39)
 
-   ☐ DB
+   ✔ DB @done (22/04/2024, 18:24:02)
     ✔ Redis (Token storage/caching) @done (18/04/2024, 19:49:50)
     ✔ MongoDB @done (21/04/2024, 22:13:10)
     ✔ Postgres @done (22/04/2024, 06:16:04)
     ✔ MySQL @done (22/04/2024, 17:38:43)
-      ☐ Change `mysql.createConnection` to creating a connection Pool instead
+      ✔ Change `mysql.createConnection` to creating a connection Pool instead @done (22/04/2024, 18:24:00)
    
 ☐ Migrate from JS to TS - refer to the points at the end
 ☐ Migrate logic from `controller` to `services`
