@@ -15,13 +15,24 @@
 ☐ Migrate from JS to TS - refer to the points at the end
 ☐ Migrate logic from `controller` to `services`
 
- ☐ Automation script (bash/golang)
-   ☐ Ask for auth type (simple/jwt)
-   ☐ Ask for DB type (postgres/mongo/mysql)
+ ✔ Automation script (bash/golang) [BASH for now] @done (24/04/2024, 22:22:44)
+ Name: 
+  `Backinit`
+ ✔ Ask for auth type (simple/jwt) @done (24/04/2024, 19:46:25)
+  Functions:
+    ✔ clone_with_jwt @done (24/04/2024, 19:46:09)
+    ✔ clone_without_jwt @done (24/04/2024, 19:46:05)
+  ✔ Ask for DB type (postgres/mongo/mysql) @done (24/04/2024, 19:46:13)
+  Functions:
+    ✔ clone_db_redis @done (24/04/2024, 19:46:05)
+    ✔ clone_db_mongodb @done (24/04/2024, 19:46:06)
+    ✔ clone_db_postgres @done (24/04/2024, 19:46:11)
+    ✔ clone_db_mysql @done (24/04/2024, 19:46:10)
 
- ☐ clone the specific branch
- ☐ remove `.git`
- ☐ initiate a new `.git`
+ ✔ clone the specific branch @done (24/04/2024, 19:47:13)
+ ✔ remove `.git` @done (24/04/2024, 19:57:44)
+ ✔ initiate a new `.git` @done (24/04/2024, 19:57:45)
+ ✔ Create a symbolic link from this repo to a dir that's in the PATH so that you can call it from anywhere @done (24/04/2024, 22:22:26)
 
  ☐ (optional) ask if the repo already exists
    ☐ if yes, then connect to it
