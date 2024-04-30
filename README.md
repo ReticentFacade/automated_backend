@@ -20,7 +20,7 @@ Usage:
 backinit
 ```
 
-- Bash
+- [X] Bash
 - [ ] Go [just want to try rewriting the same thing - Bash works perfectly fine]
 - [ ] Python
 
