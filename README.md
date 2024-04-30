@@ -6,14 +6,28 @@
 
 ## Tech Used
 
-### Backend: 
+## Backend: 
 - Javascript
 - JWT (JSON Web Token) 
 - Token Caching/Storage: Redis
 - Databases: MongoDB, Postgres, MySQL
-- Javascript Runtime Environment = Bun
+- Javascript Runtime Environment: Bun
 
-### CLI:
-- [To be determined]
+## CLI
 
+Usage:
+```sh
+backinit
+```
 
+- Bash
+- [ ] Go [just want to try rewriting the same thing - Bash works perfectly fine]
+- [ ] Python
+
+## TODO
+
+Refer to [TODO.todo](./TODO.todo)
+
+## Docs
+
+Documentation (needs to be more organised) in the `./Docs` directory.
